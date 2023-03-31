@@ -1,27 +1,41 @@
-# IE 692: Advanced Process Mining Project
+# edt-ts
 
-## General information
+Requirements:
+* OS: Fedora 34 
+* Python: version 3.9.6 
+* Python packages: 
+    * pandas==1.2.0
+    * numpy==1.20.1
+    * scikit_learn==0.24.0
+    * tsfresh==0.18.0
 
-### University of Mannheim
+These packages can be installed using pip, the version is important (especially for tsfresh). 
 
-### Chair of Process Analytics
+The folder 'data' includes csv files for the running example as well as the manufacturing use case.
+The manufacturing use case data was originally in yaml form, converted to XES and then to csv. 
+The full results, including the baseline results, can be seen in result_{running_example, manufacturing}.txt
 
-**Lecturer:** Prof. Dr. Han van der Aa
+To start the script in terminal: python time_series.py {running, manufacturing}.
+Per default, the running example use case is started. 
 
-**Tutors:** Alexander Kraus and Adrian Rebmann
+OR run using pipenv, which creates a virtual environment with all needed packages:
+* python 3.9 needed
+* install pipenv via pip
+* run "pipenv install"
+* run "pipenv run python time_series.py {use_case}"
 
-**Goal:** Our group selects a recent paper on process mining and tries to replicate the reported evaluation results with the intent to gain further insights into the results.
+Parameters that have to be set: 
+* use_case: if one of the existing use cases is to be reproduced, just enter the use case name e.g. running, manufacturing 
 
-## Tasks
+For a new dataset: 
+* df: the dataframe has to be provided if a new dataset should be tried 
+* id: the identifier of the instances e.g. uuid 
+* result_column: whats the name of the column that specifies the result 
+* variable_result: if more than two categories exist, which category is of interest 
+* results: all possible result classes
 
-1. **Paper selection:** Selection of a recent paper on process mining for the replication study.
-2. **Replication:** Obtaining data, trying to replicate evaluation results, analyzing and comparing results with evaluation results reported in the paper.
-3. **Additional investigation**: This depends on the replication success itself.
-- Replication failed: Find out about differences in the implementation from both sides. Is there more room for improvement?
-- Replication successful: Multiple  investigation options such as check implementation for additional data or inspect the generated results in more detail.
+Optionally: 
+* interval: if the intervals are to be set manually
+* variable_interest: if not given, possible time series variables are discovered and all are included in the process
 
-## Step-by-step instruction
-
-### ***UNDER DEVELOPMENT***
-
-
+To try with new dataset, these variables have to be defined as part of the preprocessing step. In addition, the dataset may has to be transformed. Look at preprocessing code for the manufacturing use case for an example.
