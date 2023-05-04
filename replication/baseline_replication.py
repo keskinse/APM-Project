@@ -108,17 +108,18 @@ def learn_tree(df, result_column, names, result, results=None, final=False):
         pass
 
     if final:
-        print("Number of nodes total: ", n_nodes)
-        print("Max depth: ", max_depth)
-        print(('Accuracy of the model is {:.0%}'.format(accuracy)))
-        print("Precision: ", precision)
-        print("Used features: ", used_features)
+        text = ""
+        text += "Number of nodes total: " + str(n_nodes) + "\n"
+        text += 'Accuracy of the model is {:.0%}'.format(accuracy) + "\n"
+        text += "Precision: " +  str(precision) + "\n"
+        text += "Used features: " + str(used_features) + "\n"
         tree_rules = export_text(model, feature_names=features)
-        print(tree_rules)
+        text += tree_rules + "\n"
         rules = (get_rules(model, features, results, result))
         for r in rules:
-            print(r)
-    return accuracy, used_features
+            text += r + "\n"
+        print(text)
+    return accuracy, used_features, text
 
 if __name__ == '__main__' :
 
