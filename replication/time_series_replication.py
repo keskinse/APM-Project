@@ -22,6 +22,7 @@ import sys
 from tsfresh import extract_features, select_features
 import tree_code_replication as tc
 import baseline_replication as bc
+import BPI_preprocessing as bpi
 
 
 def prepare_dataset(df, id, variable_interest):
@@ -209,12 +210,14 @@ def pipeline(use_case, df, id, variable_result,results,result_column, variable_i
             num_cols.append('casename')
             
         elif use_case == 'BPI':
-            df_newFeatures = df.select_dtypes(include=['number'])
+            df_newFeatures = df[[id, variable_interest]]
             df_newFeatures = df_newFeatures.dropna()
+            y_var = df[[id, result_column_og]].groupby(id).agg('last').dropna().reset_index()
+            y_var = y_var[y_var[id].isin(df_newFeatures[id].values)]
+            y_var = y_var[result_column_og].to_numpy()
             df, num_cols = prepare_dataset(df, id, variable_interest)
-            df = df.dropna(axis=1)
-            y_var = df[result_column_og + "last"].to_numpy()
-
+            df[id] = df.index
+            df = df.reset_index(drop=True)
         else:
             df_newFeatures = df.select_dtypes(include=['number'])
             df, num_cols = prepare_dataset(df, id, variable_interest)
@@ -323,7 +326,7 @@ if __name__ == '__main__' :
     try:
         use_case = sys.argv[1]
     except:
-        use_case = "running"
+        use_case = "BPI"
     
     # Change working directory (relevant for data access)
     os.chdir("..")
@@ -370,19 +373,27 @@ if __name__ == '__main__' :
         df = df.drop(columns="sub_uuid")
         pipeline(use_case, df, id, variable_result, results, result_column, variable_interest)
     
-   # elif use_case == 'BPI':
-     #   file = "data/BPI_reformed.csv"
-     #   id = 'casename'
-     #   results = ['PR', 'NPR', 'OTHER']
-     #   result_column = 'type'
-     #   variable_result = 'NPR'
-     #   variable_interest = 'networth'
-     #   df = pd.read_csv(file, nrows=20000)
-     #   df = df.rename(columns={'case concept:name':'casename', 'case Spend classification text':'type',
-     #                           'event Cumulative net worth (EUR)':'networth',
-     #                           'event time:timestamp': 'time:timestamp',
-     #                           'event concept:name': 'event'})
-     #   pipeline(use_case, df, id, variable_result, results, result_column, variable_interest)
+    elif use_case == 'BPI':
+        if not os.path.isfile(r'data\BPI_preprocessed.csv'):
+            bpi.preprocess()
+        
+        file = "data/BPI_preprocessed.csv"
+        id = 'casename'
+        results = ['PR', 'NPR']
+        result_column = 'type'
+        variable_result = 'NPR'
+        variable_interest = 'item'
+        df = pd.read_csv(file)
+        df = df.rename(columns={'case concept:name':'casename', 'case Spend classification text':'type',
+                                'case Item':'item',
+                                'event time:timestamp': 'time:timestamp',
+                                'event concept:name': 'event'})
+        df['casename'] = df['casename'].str.replace('_', '')
+        df1 = df[df['type'] == 'NPR'][:40000]
+        df2 = df[df['type'] == 'PR'][:40000]
+        new_df = pd.concat([df1, df2])
+        new_df = new_df.reset_index(drop=True)
+        pipeline(use_case, new_df, id, variable_result, results, result_column, variable_interest, interval=[1,2,5,10,17])
 
     else:
         use_case = "running"
