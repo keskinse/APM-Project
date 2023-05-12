@@ -326,7 +326,7 @@ if __name__ == '__main__' :
     try:
         use_case = sys.argv[1]
     except:
-        use_case = "BPI"
+        use_case = "running"
     
     # Change working directory (relevant for data access)
     os.chdir("..")
