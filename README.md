@@ -1,41 +1,80 @@
-# edt-ts
+# IE 692: Advanced Process Mining Project
 
-Requirements:
-* OS: Fedora 34 
-* Python: version 3.9.6 
+## General information
+
+### University of Mannheim
+
+### Chair of Process Analytics
+
+**Lecturer:** Prof. Dr. Han van der Aa
+
+**Tutors:** Alexander Kraus and Adrian Rebmann
+
+**Topic:** Decision mining with time series data based on automatic feature generation
+
+**Team:**
+   * Adrian Augustin
+   * Abderrahmane Charrade
+   * Alexander Dietrich
+   * Fatma Koumi
+   * Sergen Keskincelik
+
+**Goal:** Replication of the results by Beate Scheibel and Stefanie Rinderle-Ma
+
+**Origin:** This repository is based on the original work by the Decision mining paper authors, which can be found here: https://github.com/bscheibel/edt-ts.
+We applied additional code, which helped us to successfully replicate the original results and to perform additional investigation, i.e. examining the quality of the data and the classifier in detail.
+
+## Step-by-step instruction
+
+### Requirements
+
+* Python version 3.9.6 or better
 * Python packages: 
-    * pandas==1.2.0
-    * numpy==1.20.1
-    * scikit_learn==0.24.0
-    * tsfresh==0.18.0
+    * Pandas version 1.2.0
+    * Numpy 1.20.1
+    * Scikit_learn 0.24.0
+    * Tsfresh 0.18.0
 
-These packages can be installed using pip, the version is important (especially for tsfresh). 
+Packages can be installed using pip.
 
-The folder 'data' includes csv files for the running example as well as the manufacturing use case.
-The manufacturing use case data was originally in yaml form, converted to XES and then to csv. 
-The full results, including the baseline results, can be seen in result_{running_example, manufacturing}.txt
 
-To start the script in terminal: python time_series.py {running, manufacturing}.
-Per default, the running example use case is started. 
+### Execution of Code
 
-OR run using pipenv, which creates a virtual environment with all needed packages:
-* python 3.9 needed
-* install pipenv via pip
-* run "pipenv install"
-* run "pipenv run python time_series.py {use_case}"
+* Navigate to the python file you want to run, i.e. time_series_replication.py in the replication folder
+* Type in terminal: python time_series_replication.py USE_CASE
+   * Replace USE_CASE with running, manufacturing or BPI (supported datasets)
+   * Associated datasets can be found in the data folder
+   * BPI dataset is too large, which has to be downloaded here: https://data.4tu.nl/articles/_/12715853/1
 
-Parameters that have to be set: 
-* use_case: if one of the existing use cases is to be reproduced, just enter the use case name e.g. running, manufacturing 
+**Note:** Jupyter notebook is not suitable for this code.
 
-For a new dataset: 
-* df: the dataframe has to be provided if a new dataset should be tried 
-* id: the identifier of the instances e.g. uuid 
-* result_column: whats the name of the column that specifies the result 
-* variable_result: if more than two categories exist, which category is of interest 
-* results: all possible result classes
+### Parameters
 
-Optionally: 
-* interval: if the intervals are to be set manually
-* variable_interest: if not given, possible time series variables are discovered and all are included in the process
+Three parameters exist to manually influence the classification process:
 
-To try with new dataset, these variables have to be defined as part of the preprocessing step. In addition, the dataset may has to be transformed. Look at preprocessing code for the manufacturing use case for an example.
+* use_case: enter the name of the existing use case
+* variable_interest: enter the variable of interest, which should be included in the rule extraction process, otherwise it will discover all possible time series variables in the data (OPTIONAL)
+* interval: choose your own intervals, in which the time series data should be split to (OPTIONAL)
+
+### New dataset
+
+You can include a new dataset. However, several tasks have to be performed:
+
+* Preprocessing: Dataset itself has to be transformed into a suitable format in order to work with it as time-series data
+* Variable values: several variable values have to be provided to use the classification pipeline
+   * df: dataset has to be loaded into a suitable dataframe
+   * id: case identifier of the event log
+   * result_column: column of the classification results
+   * variable_result: choosing the category of interest
+   * results: all possible result classes
+* Parameter selection: default parameters as for the running & manufacturing case may perform well but not necessarily for the new dataset. It is useful to test out other parameter values to find the optimal solution
+
+
+
+
+
+
+
+
+
+
