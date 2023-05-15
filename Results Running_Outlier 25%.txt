@@ -1,0 +1,112 @@
+Number of total nodes: 41
+Accuracy of the model is 57%
+Precision: [0.68527919 0.54545455]
+Used features: ['temperaturelast']
+|--- temperature last <= 26.50
+| |--- temperature last <= 23.50
+| | |--- temperature last <= 18.50
+| | | |--- temperature last <= 13.50
+| | | | |--- temperature last <= 11.50
+| | | | | |--- temperature last <= 10.50
+| | | | | | |--- class: Transfer Goods
+| | | | | |--- temperature last > 10.50
+| | | | | | |--- class: Transfer Goods
+| | | | |--- temperature last > 11.50
+| | | | | |--- temperature last <= 12.50
+| | | | | | |--- class: Transfer Goods
+| | | | | |--- temperature last > 12.50
+| | | | | | |--- class: Transfer Goods
+| | | |--- temperature last > 13.50
+| | | | |--- temperature last <= 14.50
+| | | | | |--- class: Discard Goods
+| | | | |--- temperature last > 14.50
+| | | | | |--- temperature last <= 15.50
+| | | | | | |--- class: Transfer Goods
+| | | | | |--- temperature last > 15.50
+| | | | | | |--- temperature last <= 16.50
+| | | | | | | |--- class: Transfer Goods
+| | | | | | |--- temperature last > 16.50
+| | | | | | | |--- temperature last <= 17.50
+| | | | | | | | |--- class: Transfer Goods
+| | | | | | | |--- temperature last > 17.50
+| | | | | | | | |--- class: Transfer Goods
+| | |--- temperature last > 18.50
+| | | |--- temperature last <= 22.50
+| | | | |--- temperature last <= 21.50
+| | | | | |--- temperature last <= 20.50
+| | | | | | |--- temperature last <= 19.50
+| | | | | | | |--- class: Transfer Goods
+| | | | | | |--- temperature last > 19.50
+| | | | | | | |--- class: Transfer Goods
+| | | | | |--- temperature last > 20.50
+| | | | | | |--- class: Transfer Goods
+| | | | |--- temperature last > 21.50
+| | | | | |--- class: Transfer Goods
+| | | |--- temperature last > 22.50
+| | | | |--- class: Transfer Goods
+| |--- temperature last > 23.50
+| | |--- temperature last <= 25.50
+| | | |--- temperature last <= 24.50
+| | | | |--- class: Transfer Goods
+| | | |--- temperature last > 24.50
+| | | | |--- class: Transfer Goods
+| | |--- temperature last > 25.50
+| | | |--- class: Transfer Goods
+|--- temperature last > 26.50
+| |--- temperature last <= 28.50
+| | |--- temperature last <= 27.50
+| | | |--- class: Discard Goods
+| | |--- temperature last > 27.50
+| | | |--- class: Discard Goods
+| |--- temperature last > 28.50
+| | |--- temperature last <= 29.50
+| | | |--- class: Discard Goods
+| | |--- temperature last > 29.50
+| | | |--- class: Discard Goods
+
+IF (temperaturelast > 26.5) AND (temperaturelast <= 28.5) AND (temperaturelast <= 27.5) THEN class: Discard Goods
+IF (temperaturelast <= 26.5) AND (temperaturelast <= 23.5) AND (temperaturelast <= 18.5) AND (temperaturelast > 13.5) AND (temperaturelast <= 14.5) THEN class: Discard Goods
+IF (temperaturelast > 26.5) AND (temperaturelast <= 28.5) AND (temperaturelast > 27.5) THEN class: Discard Goods
+IF (temperaturelast > 26.5) AND (temperaturelast > 28.5) AND (temperaturelast > 29.5) THEN class: Discard Goods
+IF (temperaturelast > 26.5) AND (temperaturelast > 28.5) AND (temperaturelast <= 29.5) THEN class: Discard Goods
+
+Array NOK:  2411
+Array OK:  2589
+Reoccuring variables/Time Series Candidates:  ['temperature']
+Calculated interval-based features...
+Number of nodes total:  3
+Max depth:  1
+Accuracy of the model is 64%
+Precision:  [1.         0.58275058]
+Used features:  ['temperaturelist.count(27.0)>=4.0']
+|--- temperaturelist.count(27.0)>=4.0 <= 0.50
+|   |--- class: Transfer Goods
+|--- temperaturelist.count(27.0)>=4.0 >  0.50
+|   |--- class: Discard Goods
+
+IF (temperaturelist.count(27.0)>=4.0 == TRUE) THEN class: Discard Goods 
+Calculated pattern-based features...
+Feature Extraction: 100%|██████████████████████████████████████████████████████████████| 20/20 [01:36<00:00,  4.82s/it]
+Number of nodes total:  3
+Max depth:  1
+Accuracy of the model is 75%
+Precision:  [0.85393258 0.69565217]
+Used features:  ['temperature__quantile__q_0.8']
+|--- temperature__quantile__q_0.8 <= 26.10
+|   |--- class: Transfer Goods
+|--- temperature__quantile__q_0.8 >  26.10
+|   |--- class: Discard Goods
+
+IF (temperature__quantile__q_0.8 > 26.1) THEN class: Discard Goods 
+Calculated global features...
+Number of nodes total:  3
+Max depth:  1
+Accuracy of the model is 75%
+Precision:  [0.85393258 0.69565217]
+Used features:  ['temperature__quantile__q_0.8']
+|--- temperature__quantile__q_0.8 <= 26.10
+|   |--- class: Transfer Goods
+|--- temperature__quantile__q_0.8 >  26.10
+|   |--- class: Discard Goods
+
+IF (temperature__quantile__q_0.8 > 26.1) THEN class: Discard Goods 
