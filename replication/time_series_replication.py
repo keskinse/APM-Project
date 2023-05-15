@@ -324,7 +324,7 @@ def pipeline(use_case, df, id, variable_result,results,result_column, variable_i
             df_og = pd.merge(df, df_og, on=id, how="outer", suffixes=('', '_y'))
             num_cols_all.extend(num_cols)
     print("COMBINED:")
-    acc, features, combined_text = tc.learn_tree(df_og, result_column, num_cols_all, variable_result, results, True)
+    acc, features, combined_text = tc.learn_tree(df_og, result_column, num_cols_all, variable_result, results, True, True)
     total_text += "COMBINED: \n" + combined_text
     
     if not os.path.isdir('results'):
@@ -384,18 +384,7 @@ if __name__ == '__main__' :
         df = df.replace({'casename': uuids})
         df = df.drop(columns="subname")
         df = df.drop(columns="sub_uuid")
-        pipeline(use_case, df, id, variable_result, results, result_column, variable_interest)
-        
-        print(color.BOLD + color.UNDERLINE + color.CYAN + 'Columns of dataframe:' + color.END)
-        print(color.CYAN + '-----------------------------------------------' + color.END)
-        print(df.columns)
-        df['data_diameter'] = df['data_diameter'].astype(float)
-        y_true = df['case:data_success'].values
-        y_pred = df['data_diameter'].values
-        
-        # Confusion Matrix
-        ev.generate_confusion_matrix(y_true, y_pred, '/home/abdocharrade/projects/APM-Project/images/ConfusionMatrix_Manufacturing.png')
-        
+        pipeline(use_case, df, id, variable_result, results, result_column, variable_interest)       
     
     elif use_case == 'BPI':
         if not os.path.isfile(r'data\BPI_preprocessed.csv'):
@@ -418,16 +407,6 @@ if __name__ == '__main__' :
         new_df = pd.concat([df1, df2])
         new_df = new_df.reset_index(drop=True)
         pipeline(use_case, new_df, id, variable_result, results, result_column, variable_interest, interval=[1,2,5,10,17])
-        
-        y_true = df[result_column].values
-        y_pred = df[variable_result].values
-        
-        print(color.BOLD + color.UNDERLINE + color.CYAN + 'Columns of dataframe:' + color.END)
-        print(color.CYAN + '-----------------------------------------------' + color.END)
-        print(color.GREEN, df.columns, color.END)
-        
-        # Confusion Matrix
-        ev.generate_confusion_matrix(y_true, y_pred, '/home/abdocharrade/projects/APM-Project/images/ConfusionMatrix_BPI.png')
 
     else:
         use_case = "running"
@@ -440,16 +419,6 @@ if __name__ == '__main__' :
         df = pd.read_csv(file)
         df = df.rename(columns={"timestamp": "time:timestamp"})
         pipeline(use_case, df, id, variable_result, results, result_column, variable_interest)
-        
-        print(color.BOLD + color.UNDERLINE + color.CYAN + 'Columns of dataframe:' + color.END)
-        print(color.CYAN + '-----------------------------------------------' + color.END)
-        print(color.GREEN, df.columns, color.END)
-        
-        y_true = df[result_column].values
-        y_pred = df[variable_result].values
-        
-        # Confusion Matrix
-        ev.generate_confusion_matrix(y_true, y_pred, '/home/abdocharrade/projects/APM-Project/images/ConfusionMatrix_Manufacturing.png')
         
     
 
