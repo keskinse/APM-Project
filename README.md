@@ -21,7 +21,7 @@
 
 **Goal:** Replication of the results by Beate Scheibel and Stefanie Rinderle-Ma
 
-**Origin:** This repository is based on the original work by the Decision mining paper authors, which can be found here: https://github.com/bscheibel/edt-ts.
+**Origin:** This repository is based on the original work by the [decision mining paper](https://link.springer.com/chapter/10.1007/978-3-031-07472-1_1) authors, which can be found here: https://github.com/bscheibel/edt-ts.
 We applied additional code, which helped us to successfully replicate the original results and to perform additional investigation, i.e. examining the quality of the data and the classifier in detail.
 
 ## Step-by-step instruction
@@ -30,10 +30,10 @@ We applied additional code, which helped us to successfully replicate the origin
 
 * Python version 3.9.6 or better
 * Python packages: 
-    * Pandas version 1.2.0
-    * Numpy 1.20.1
-    * Scikit_learn 0.24.0
-    * Tsfresh 0.18.0
+    * pandas version 1.2.0
+    * numpy 1.20.1
+    * scikit_learn 0.24.0
+    * tsfresh 0.18.0
 
 Packages can be installed using pip.
 
@@ -42,9 +42,13 @@ Packages can be installed using pip.
 
 * Navigate to the python file you want to run, i.e. time_series_replication.py in the replication folder
 * Type in terminal: python time_series_replication.py USE_CASE
-   * Replace USE_CASE with running, manufacturing or BPI (supported datasets)
-   * Associated datasets can be found in the data folder
+   * replace USE_CASE with running, manufacturing or BPI (supported datasets)
+   * associated datasets can be found in the data folder
    * BPI dataset is too large, which has to be downloaded here: https://data.4tu.nl/articles/_/12715853/1
+* Alternatively make use of a virtual environment with pipenv
+   * pipenv has to be installed via pip
+   * type in terminal: pipenv install
+   * then use: pipenv run python time_series_replication.py USE_CASE
 
 **Note:** Jupyter notebook is not suitable for this code.
 
