@@ -44,7 +44,7 @@ Packages can be installed using pip.
 * Type in terminal: python time_series_replication.py USE_CASE
    * replace USE_CASE with running, manufacturing or BPI (supported datasets)
    * associated datasets can be found in the data folder
-   * BPI dataset is too large, which has to be downloaded here: https://data.4tu.nl/articles/_/12715853/1
+   * BPI dataset is too large, which has to be downloaded here: http://icpmconference.org/2019/wp-content/uploads/sites/6/2019/02/BPIChallenge2019CSV.zip
 * Alternatively make use of a virtual environment with pipenv
    * pipenv has to be installed via pip
    * type in terminal: pipenv install
@@ -73,7 +73,21 @@ You can include a new dataset. However, several tasks have to be performed:
    * results: all possible result classes
 * Parameter selection: default parameters as for the running & manufacturing case may perform well but not necessarily for the new dataset. It is useful to test out other parameter values to find the optimal solution
 
+## System Information
 
+In the following table, you can view the system information for each machine, that ran the code.
+
+<!-- TABLE_GENERATE_START -->
+
+| Setting number  | CPU | RAM | OS |
+| -------- | --- | --- | --- |
+|  1  | Intel i5-8265U | 8 GB | Windows 10 |
+|  2  | Intel i7-8550U | 8 GB | Windows 10 |
+|  3  | Intel i7-85650U | 8 GB | Windows 10 |
+|  4  | Intel i5 Quad-Core | 8 GB | MacOS Ventura 13.3.1 |
+|  5  | Intel i7 Quad-Core | 16 GB | MacOS BigSur 11.7.5 |
+
+<!-- TABLE_GENERATE_END -->
 
 
 
