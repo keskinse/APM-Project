@@ -46,9 +46,16 @@ Packages can be installed using pip.
    * associated datasets can be found in the data folder
    * BPI dataset is too large, which has to be downloaded here: http://icpmconference.org/2019/wp-content/uploads/sites/6/2019/02/BPIChallenge2019CSV.zip
 * Alternatively make use of a virtual environment with pipenv
-   * pipenv has to be installed via pip
-   * type in terminal: pipenv install
-   * then use: pipenv run python time_series_replication.py USE_CASE
+   * pipenv has to be installed via pip<br>
+      `pip install pipenv`
+   * type in terminal:<br>
+      `pipenv install`
+   * then execute: <br>
+   `pipenv run python time_series_replication.py USE_CASE` from root of the project directory
+   * Note that in case you use pipenv, you have to comment out the line 350 in file __time_series_application.py__ which changes directory to access the csv files:
+      ```
+      os.chdir("..")
+      ``` 
 
 **Note:** Jupyter notebook is not suitable for this code.
 
