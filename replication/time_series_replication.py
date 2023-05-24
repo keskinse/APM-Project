@@ -346,9 +346,8 @@ if __name__ == '__main__' :
         use_case = "running"
     
     # Change working directory (relevant for data access)
-    print(color.BOLD+ color.CYAN + 'Current directory: ' + os.getcwd() + color.END)
-    # os.chdir("..")
-    print(color.BOLD+ color.CYAN + 'Current directory: ' + os.getcwd() + color.END)
+    
+    # os.chdir("..") # Uncomment if you are not using pipenv to execute the project
 
     #preprocessing happens here
     if use_case == "manufacturing":

@@ -337,13 +337,13 @@ Used features: ['itemlist16_sum']
 ONLY PATTERN-BASED: 
 Accuracy of the model is 58%
 Precision: [0.93103448 0.25806452]
-Used features: ['itemlist.count(11)>=13']
-|--- itemlist.count(11)>=13 <= 0.50
+Used features: ['itemlist.count(11)>=12']
+|--- itemlist.count(11)>=12 <= 0.50
 |   |--- class: NPR
-|--- itemlist.count(11)>=13 >  0.50
+|--- itemlist.count(11)>=12 >  0.50
 |   |--- class: PR
 
-IF (itemlist.count(11)>=13 == TRUE) THEN class: NPR 
+IF (itemlist.count(11)>=12 == TRUE) THEN class: NPR 
 
 ONLY GLOBAL FEATURES: 
 Accuracy of the model is 88%

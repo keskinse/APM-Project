@@ -23,8 +23,10 @@ from sklearn.feature_selection import SelectFromModel
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, precision_score
 from sklearn.tree import export_text
+from sklearn.preprocessing import LabelBinarizer
 import re
 from warnings import simplefilter
+from sklearn.metrics import roc_curve, auc
 import Evaluation as ev
 simplefilter(action='ignore', category=FutureWarning)
 simplefilter(action='ignore', category=RuntimeWarning)
@@ -109,10 +111,17 @@ def learn_tree(df, result_column, names, result, results=None, final=False, use_
         model = clfs[-1]
     model = model.fit(X_train,y_train)
     pred_model = model.predict(X_test)
-    y_true = y_test
-    
+
     # Confusion matrix
+    y_true = y_test
     ev.generate_confusion_matrix(y_true, pred_model, np.unique(y_var), use_case, pattern)
+    
+    # ROC Curve
+    y_score = model.predict_proba(X_test)[:,1]
+    label_binarizer = LabelBinarizer()
+    y_true_binary = label_binarizer.fit_transform(y_true)
+    
+    ev.generate_roc_curve(y_true_binary, y_score, use_case, pattern)
     
     n_nodes = model.tree_.node_count
     max_depth = model.tree_.max_depth
