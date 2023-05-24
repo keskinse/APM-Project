@@ -1,0 +1,368 @@
+BASIC DECISION TREE: 
+Number of nodes total: 199
+Accuracy of the model is 98%
+Precision: [0. 1.]
+Used features: ['itemlast']
+|--- itemlast <= 9.50
+|   |--- itemlast <= 1.50
+|   |   |--- class: NPR
+|   |--- itemlast >  1.50
+|   |   |--- class: NPR
+|--- itemlast >  9.50
+|   |--- itemlast <= 10.50
+|   |   |--- class: PR
+|   |--- itemlast >  10.50
+|   |   |--- itemlast <= 15.50
+|   |   |   |--- class: NPR
+|   |   |--- itemlast >  15.50
+|   |   |   |--- itemlast <= 715.00
+|   |   |   |   |--- itemlast <= 175.00
+|   |   |   |   |   |--- itemlast <= 25.00
+|   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |--- itemlast >  25.00
+|   |   |   |   |   |   |--- itemlast <= 115.00
+|   |   |   |   |   |   |   |--- itemlast <= 35.00
+|   |   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |   |   |--- itemlast >  35.00
+|   |   |   |   |   |   |   |   |--- itemlast <= 75.00
+|   |   |   |   |   |   |   |   |   |--- itemlast <= 45.00
+|   |   |   |   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |   |   |   |   |--- itemlast >  45.00
+|   |   |   |   |   |   |   |   |   |   |--- itemlast <= 55.00
+|   |   |   |   |   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |   |   |   |   |   |--- itemlast >  55.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |--- itemlast >  75.00
+|   |   |   |   |   |   |   |   |   |--- itemlast <= 85.00
+|   |   |   |   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |   |   |   |   |--- itemlast >  85.00
+|   |   |   |   |   |   |   |   |   |   |--- itemlast <= 105.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |   |--- itemlast >  105.00
+|   |   |   |   |   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |   |--- itemlast >  115.00
+|   |   |   |   |   |   |   |--- itemlast <= 145.00
+|   |   |   |   |   |   |   |   |--- itemlast <= 135.00
+|   |   |   |   |   |   |   |   |   |--- itemlast <= 125.00
+|   |   |   |   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |   |   |   |   |--- itemlast >  125.00
+|   |   |   |   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |   |   |   |--- itemlast >  135.00
+|   |   |   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |   |   |--- itemlast >  145.00
+|   |   |   |   |   |   |   |   |--- itemlast <= 155.00
+|   |   |   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |   |   |   |--- itemlast >  155.00
+|   |   |   |   |   |   |   |   |   |--- itemlast <= 165.00
+|   |   |   |   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |   |   |   |   |--- itemlast >  165.00
+|   |   |   |   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |--- itemlast >  175.00
+|   |   |   |   |   |--- itemlast <= 565.00
+|   |   |   |   |   |   |--- itemlast <= 275.00
+|   |   |   |   |   |   |   |--- itemlast <= 185.00
+|   |   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |   |   |--- itemlast >  185.00
+|   |   |   |   |   |   |   |   |--- itemlast <= 235.00
+|   |   |   |   |   |   |   |   |   |--- itemlast <= 215.00
+|   |   |   |   |   |   |   |   |   |   |--- itemlast <= 205.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |   |--- itemlast >  205.00
+|   |   |   |   |   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |   |   |   |   |--- itemlast >  215.00
+|   |   |   |   |   |   |   |   |   |   |--- itemlast <= 225.00
+|   |   |   |   |   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |   |   |   |   |   |--- itemlast >  225.00
+|   |   |   |   |   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |   |   |   |--- itemlast >  235.00
+|   |   |   |   |   |   |   |   |   |--- itemlast <= 255.00
+|   |   |   |   |   |   |   |   |   |   |--- itemlast <= 245.00
+|   |   |   |   |   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |   |   |   |   |   |--- itemlast >  245.00
+|   |   |   |   |   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |   |   |   |   |--- itemlast >  255.00
+|   |   |   |   |   |   |   |   |   |   |--- itemlast <= 265.00
+|   |   |   |   |   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |   |   |   |   |   |--- itemlast >  265.00
+|   |   |   |   |   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |   |--- itemlast >  275.00
+|   |   |   |   |   |   |   |--- itemlast <= 325.00
+|   |   |   |   |   |   |   |   |--- itemlast <= 295.00
+|   |   |   |   |   |   |   |   |   |--- itemlast <= 285.00
+|   |   |   |   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |   |   |   |   |--- itemlast >  285.00
+|   |   |   |   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |   |   |   |--- itemlast >  295.00
+|   |   |   |   |   |   |   |   |   |--- itemlast <= 315.00
+|   |   |   |   |   |   |   |   |   |   |--- itemlast <= 305.00
+|   |   |   |   |   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |   |   |   |   |   |--- itemlast >  305.00
+|   |   |   |   |   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |   |   |   |   |--- itemlast >  315.00
+|   |   |   |   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |   |   |--- itemlast >  325.00
+|   |   |   |   |   |   |   |   |--- itemlast <= 335.00
+|   |   |   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |   |   |   |--- itemlast >  335.00
+|   |   |   |   |   |   |   |   |   |--- itemlast <= 375.00
+|   |   |   |   |   |   |   |   |   |   |--- itemlast <= 365.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |   |--- itemlast >  365.00
+|   |   |   |   |   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |   |   |   |   |--- itemlast >  375.00
+|   |   |   |   |   |   |   |   |   |   |--- itemlast <= 435.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |   |   |--- itemlast >  435.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 12
+|   |   |   |   |   |--- itemlast >  565.00
+|   |   |   |   |   |   |--- itemlast <= 575.00
+|   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |   |--- itemlast >  575.00
+|   |   |   |   |   |   |   |--- itemlast <= 615.00
+|   |   |   |   |   |   |   |   |--- itemlast <= 585.00
+|   |   |   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |   |   |   |--- itemlast >  585.00
+|   |   |   |   |   |   |   |   |   |--- itemlast <= 595.00
+|   |   |   |   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |   |   |   |   |--- itemlast >  595.00
+|   |   |   |   |   |   |   |   |   |   |--- itemlast <= 605.00
+|   |   |   |   |   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |   |   |   |   |   |--- itemlast >  605.00
+|   |   |   |   |   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |   |   |--- itemlast >  615.00
+|   |   |   |   |   |   |   |   |--- itemlast <= 685.00
+|   |   |   |   |   |   |   |   |   |--- itemlast <= 625.00
+|   |   |   |   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |   |   |   |   |--- itemlast >  625.00
+|   |   |   |   |   |   |   |   |   |   |--- itemlast <= 635.00
+|   |   |   |   |   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |   |   |   |   |   |--- itemlast >  635.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
+|   |   |   |   |   |   |   |   |--- itemlast >  685.00
+|   |   |   |   |   |   |   |   |   |--- itemlast <= 695.00
+|   |   |   |   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |   |   |   |   |--- itemlast >  695.00
+|   |   |   |   |   |   |   |   |   |   |--- itemlast <= 705.00
+|   |   |   |   |   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |   |   |   |   |   |--- itemlast >  705.00
+|   |   |   |   |   |   |   |   |   |   |   |--- class: PR
+|   |   |   |--- itemlast >  715.00
+|   |   |   |   |--- itemlast <= 965.00
+|   |   |   |   |   |--- itemlast <= 915.00
+|   |   |   |   |   |   |--- itemlast <= 725.00
+|   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |   |--- itemlast >  725.00
+|   |   |   |   |   |   |   |--- itemlast <= 775.00
+|   |   |   |   |   |   |   |   |--- itemlast <= 735.00
+|   |   |   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |   |   |   |--- itemlast >  735.00
+|   |   |   |   |   |   |   |   |   |--- itemlast <= 745.00
+|   |   |   |   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |   |   |   |   |--- itemlast >  745.00
+|   |   |   |   |   |   |   |   |   |   |--- itemlast <= 755.00
+|   |   |   |   |   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |   |   |   |   |   |--- itemlast >  755.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |--- itemlast >  775.00
+|   |   |   |   |   |   |   |   |--- itemlast <= 785.00
+|   |   |   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |   |   |   |--- itemlast >  785.00
+|   |   |   |   |   |   |   |   |   |--- itemlast <= 795.00
+|   |   |   |   |   |   |   |   |   |   |--- class: PR
+|   |   |   |   |   |   |   |   |   |--- itemlast >  795.00
+|   |   |   |   |   |   |   |   |   |   |--- itemlast <= 815.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |   |--- itemlast >  815.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 8
+|   |   |   |   |   |--- itemlast >  915.00
+|   |   |   |   |   |   |--- itemlast <= 925.00
+|   |   |   |   |   |   |   |--- class: NPR
+|   |   |   |   |   |   |--- itemlast >  925.00
+|   |   |   |   |   |   |   |--- itemlast <= 935.00
+|   |   |   |   |   |   |   |   |--- class: NPR
+|   |   |   |   |   |   |   |--- itemlast >  935.00
+|   |   |   |   |   |   |   |   |--- itemlast <= 945.00
+|   |   |   |   |   |   |   |   |   |--- class: NPR
+|   |   |   |   |   |   |   |   |--- itemlast >  945.00
+|   |   |   |   |   |   |   |   |   |--- itemlast <= 955.00
+|   |   |   |   |   |   |   |   |   |   |--- class: NPR
+|   |   |   |   |   |   |   |   |   |--- itemlast >  955.00
+|   |   |   |   |   |   |   |   |   |   |--- class: NPR
+|   |   |   |   |--- itemlast >  965.00
+|   |   |   |   |   |--- class: PR
+
+IF (itemlast > 9.5) AND (itemlast <= 10.5) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast <= 175.0) AND (itemlast <= 25.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast <= 175.0) AND (itemlast > 25.0) AND (itemlast <= 115.0) AND (itemlast <= 35.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast <= 175.0) AND (itemlast > 25.0) AND (itemlast <= 115.0) AND (itemlast > 35.0) AND (itemlast <= 75.0) AND (itemlast <= 45.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast <= 175.0) AND (itemlast > 25.0) AND (itemlast <= 115.0) AND (itemlast > 35.0) AND (itemlast <= 75.0) AND (itemlast > 45.0) AND (itemlast <= 55.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast <= 175.0) AND (itemlast > 25.0) AND (itemlast <= 115.0) AND (itemlast > 35.0) AND (itemlast <= 75.0) AND (itemlast > 45.0) AND (itemlast > 55.0) AND (itemlast <= 65.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast <= 175.0) AND (itemlast > 25.0) AND (itemlast <= 115.0) AND (itemlast > 35.0) AND (itemlast <= 75.0) AND (itemlast > 45.0) AND (itemlast > 55.0) AND (itemlast > 65.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast <= 175.0) AND (itemlast > 25.0) AND (itemlast <= 115.0) AND (itemlast > 35.0) AND (itemlast > 75.0) AND (itemlast <= 85.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast <= 175.0) AND (itemlast > 25.0) AND (itemlast <= 115.0) AND (itemlast > 35.0) AND (itemlast > 75.0) AND (itemlast > 85.0) AND (itemlast <= 105.0) AND (itemlast <= 95.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast <= 175.0) AND (itemlast > 25.0) AND (itemlast <= 115.0) AND (itemlast > 35.0) AND (itemlast > 75.0) AND (itemlast > 85.0) AND (itemlast <= 105.0) AND (itemlast > 95.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast <= 175.0) AND (itemlast > 25.0) AND (itemlast <= 115.0) AND (itemlast > 35.0) AND (itemlast > 75.0) AND (itemlast > 85.0) AND (itemlast > 105.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast <= 175.0) AND (itemlast > 25.0) AND (itemlast > 115.0) AND (itemlast <= 145.0) AND (itemlast <= 135.0) AND (itemlast <= 125.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast <= 175.0) AND (itemlast > 25.0) AND (itemlast > 115.0) AND (itemlast <= 145.0) AND (itemlast <= 135.0) AND (itemlast > 125.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast <= 175.0) AND (itemlast > 25.0) AND (itemlast > 115.0) AND (itemlast <= 145.0) AND (itemlast > 135.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast <= 175.0) AND (itemlast > 25.0) AND (itemlast > 115.0) AND (itemlast > 145.0) AND (itemlast <= 155.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast <= 175.0) AND (itemlast > 25.0) AND (itemlast > 115.0) AND (itemlast > 145.0) AND (itemlast > 155.0) AND (itemlast <= 165.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast <= 175.0) AND (itemlast > 25.0) AND (itemlast > 115.0) AND (itemlast > 145.0) AND (itemlast > 155.0) AND (itemlast > 165.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast <= 565.0) AND (itemlast <= 275.0) AND (itemlast > 185.0) AND (itemlast <= 235.0) AND (itemlast <= 215.0) AND (itemlast <= 205.0) AND (itemlast <= 195.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast <= 565.0) AND (itemlast <= 275.0) AND (itemlast <= 185.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast <= 565.0) AND (itemlast <= 275.0) AND (itemlast > 185.0) AND (itemlast <= 235.0) AND (itemlast <= 215.0) AND (itemlast <= 205.0) AND (itemlast > 195.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast <= 565.0) AND (itemlast <= 275.0) AND (itemlast > 185.0) AND (itemlast <= 235.0) AND (itemlast <= 215.0) AND (itemlast > 205.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast <= 565.0) AND (itemlast <= 275.0) AND (itemlast > 185.0) AND (itemlast <= 235.0) AND (itemlast > 215.0) AND (itemlast <= 225.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast <= 565.0) AND (itemlast <= 275.0) AND (itemlast > 185.0) AND (itemlast <= 235.0) AND (itemlast > 215.0) AND (itemlast > 225.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast <= 565.0) AND (itemlast <= 275.0) AND (itemlast > 185.0) AND (itemlast > 235.0) AND (itemlast <= 255.0) AND (itemlast <= 245.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast <= 565.0) AND (itemlast <= 275.0) AND (itemlast > 185.0) AND (itemlast > 235.0) AND (itemlast <= 255.0) AND (itemlast > 245.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast <= 565.0) AND (itemlast <= 275.0) AND (itemlast > 185.0) AND (itemlast > 235.0) AND (itemlast > 255.0) AND (itemlast <= 265.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast <= 565.0) AND (itemlast <= 275.0) AND (itemlast > 185.0) AND (itemlast > 235.0) AND (itemlast > 255.0) AND (itemlast > 265.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast <= 565.0) AND (itemlast > 275.0) AND (itemlast <= 325.0) AND (itemlast <= 295.0) AND (itemlast <= 285.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast <= 565.0) AND (itemlast > 275.0) AND (itemlast <= 325.0) AND (itemlast <= 295.0) AND (itemlast > 285.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast <= 565.0) AND (itemlast > 275.0) AND (itemlast <= 325.0) AND (itemlast > 295.0) AND (itemlast <= 315.0) AND (itemlast > 305.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast <= 565.0) AND (itemlast > 275.0) AND (itemlast <= 325.0) AND (itemlast > 295.0) AND (itemlast <= 315.0) AND (itemlast <= 305.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast <= 565.0) AND (itemlast > 275.0) AND (itemlast <= 325.0) AND (itemlast > 295.0) AND (itemlast > 315.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast <= 565.0) AND (itemlast > 275.0) AND (itemlast > 325.0) AND (itemlast <= 335.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast <= 565.0) AND (itemlast > 275.0) AND (itemlast > 325.0) AND (itemlast > 335.0) AND (itemlast <= 375.0) AND (itemlast <= 365.0) AND (itemlast <= 345.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast <= 565.0) AND (itemlast > 275.0) AND (itemlast > 325.0) AND (itemlast > 335.0) AND (itemlast <= 375.0) AND (itemlast <= 365.0) AND (itemlast > 345.0) AND (itemlast <= 355.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast <= 565.0) AND (itemlast > 275.0) AND (itemlast > 325.0) AND (itemlast > 335.0) AND (itemlast <= 375.0) AND (itemlast <= 365.0) AND (itemlast > 345.0) AND (itemlast > 355.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast <= 565.0) AND (itemlast > 275.0) AND (itemlast > 325.0) AND (itemlast > 335.0) AND (itemlast <= 375.0) AND (itemlast > 365.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast <= 565.0) AND (itemlast > 275.0) AND (itemlast > 325.0) AND (itemlast > 335.0) AND (itemlast > 375.0) AND (itemlast <= 435.0) AND (itemlast <= 415.0) AND (itemlast <= 395.0) AND (itemlast <= 385.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast <= 565.0) AND (itemlast > 275.0) AND (itemlast > 325.0) AND (itemlast > 335.0) AND (itemlast > 375.0) AND (itemlast <= 435.0) AND (itemlast <= 415.0) AND (itemlast <= 395.0) AND (itemlast > 385.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast <= 565.0) AND (itemlast > 275.0) AND (itemlast > 325.0) AND (itemlast > 335.0) AND (itemlast > 375.0) AND (itemlast <= 435.0) AND (itemlast <= 415.0) AND (itemlast > 395.0) AND (itemlast <= 405.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast <= 565.0) AND (itemlast > 275.0) AND (itemlast > 325.0) AND (itemlast > 335.0) AND (itemlast > 375.0) AND (itemlast <= 435.0) AND (itemlast <= 415.0) AND (itemlast > 395.0) AND (itemlast > 405.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast <= 565.0) AND (itemlast > 275.0) AND (itemlast > 325.0) AND (itemlast > 335.0) AND (itemlast > 375.0) AND (itemlast <= 435.0) AND (itemlast > 415.0) AND (itemlast <= 425.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast > 715.0) AND (itemlast > 965.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast <= 565.0) AND (itemlast > 275.0) AND (itemlast > 325.0) AND (itemlast > 335.0) AND (itemlast > 375.0) AND (itemlast <= 435.0) AND (itemlast > 415.0) AND (itemlast > 425.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast <= 565.0) AND (itemlast > 275.0) AND (itemlast > 325.0) AND (itemlast > 335.0) AND (itemlast > 375.0) AND (itemlast > 435.0) AND (itemlast <= 455.0) AND (itemlast > 445.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast <= 565.0) AND (itemlast > 275.0) AND (itemlast > 325.0) AND (itemlast > 335.0) AND (itemlast > 375.0) AND (itemlast > 435.0) AND (itemlast <= 455.0) AND (itemlast <= 445.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast <= 565.0) AND (itemlast > 275.0) AND (itemlast > 325.0) AND (itemlast > 335.0) AND (itemlast > 375.0) AND (itemlast > 435.0) AND (itemlast > 455.0) AND (itemlast > 465.0) AND (itemlast > 475.0) AND (itemlast > 485.0) AND (itemlast > 495.0) AND (itemlast > 505.0) AND (itemlast > 515.0) AND (itemlast <= 525.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast <= 565.0) AND (itemlast > 275.0) AND (itemlast > 325.0) AND (itemlast > 335.0) AND (itemlast > 375.0) AND (itemlast > 435.0) AND (itemlast > 455.0) AND (itemlast > 465.0) AND (itemlast > 475.0) AND (itemlast > 485.0) AND (itemlast > 495.0) AND (itemlast > 505.0) AND (itemlast > 515.0) AND (itemlast > 525.0) AND (itemlast > 535.0) AND (itemlast <= 545.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast <= 565.0) AND (itemlast > 275.0) AND (itemlast > 325.0) AND (itemlast > 335.0) AND (itemlast > 375.0) AND (itemlast > 435.0) AND (itemlast > 455.0) AND (itemlast > 465.0) AND (itemlast > 475.0) AND (itemlast > 485.0) AND (itemlast > 495.0) AND (itemlast > 505.0) AND (itemlast <= 515.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast > 565.0) AND (itemlast > 575.0) AND (itemlast <= 615.0) AND (itemlast <= 585.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast > 565.0) AND (itemlast <= 575.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast <= 565.0) AND (itemlast > 275.0) AND (itemlast > 325.0) AND (itemlast > 335.0) AND (itemlast > 375.0) AND (itemlast > 435.0) AND (itemlast > 455.0) AND (itemlast > 465.0) AND (itemlast > 475.0) AND (itemlast > 485.0) AND (itemlast > 495.0) AND (itemlast > 505.0) AND (itemlast > 515.0) AND (itemlast > 525.0) AND (itemlast > 535.0) AND (itemlast > 545.0) AND (itemlast > 555.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast <= 565.0) AND (itemlast > 275.0) AND (itemlast > 325.0) AND (itemlast > 335.0) AND (itemlast > 375.0) AND (itemlast > 435.0) AND (itemlast > 455.0) AND (itemlast > 465.0) AND (itemlast > 475.0) AND (itemlast > 485.0) AND (itemlast > 495.0) AND (itemlast > 505.0) AND (itemlast > 515.0) AND (itemlast > 525.0) AND (itemlast > 535.0) AND (itemlast > 545.0) AND (itemlast <= 555.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast <= 565.0) AND (itemlast > 275.0) AND (itemlast > 325.0) AND (itemlast > 335.0) AND (itemlast > 375.0) AND (itemlast > 435.0) AND (itemlast > 455.0) AND (itemlast > 465.0) AND (itemlast <= 475.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast <= 565.0) AND (itemlast > 275.0) AND (itemlast > 325.0) AND (itemlast > 335.0) AND (itemlast > 375.0) AND (itemlast > 435.0) AND (itemlast > 455.0) AND (itemlast > 465.0) AND (itemlast > 475.0) AND (itemlast > 485.0) AND (itemlast > 495.0) AND (itemlast > 505.0) AND (itemlast > 515.0) AND (itemlast > 525.0) AND (itemlast <= 535.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast <= 565.0) AND (itemlast > 275.0) AND (itemlast > 325.0) AND (itemlast > 335.0) AND (itemlast > 375.0) AND (itemlast > 435.0) AND (itemlast > 455.0) AND (itemlast > 465.0) AND (itemlast > 475.0) AND (itemlast > 485.0) AND (itemlast > 495.0) AND (itemlast <= 505.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast <= 565.0) AND (itemlast > 275.0) AND (itemlast > 325.0) AND (itemlast > 335.0) AND (itemlast > 375.0) AND (itemlast > 435.0) AND (itemlast > 455.0) AND (itemlast <= 465.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast <= 565.0) AND (itemlast > 275.0) AND (itemlast > 325.0) AND (itemlast > 335.0) AND (itemlast > 375.0) AND (itemlast > 435.0) AND (itemlast > 455.0) AND (itemlast > 465.0) AND (itemlast > 475.0) AND (itemlast <= 485.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast <= 565.0) AND (itemlast > 275.0) AND (itemlast > 325.0) AND (itemlast > 335.0) AND (itemlast > 375.0) AND (itemlast > 435.0) AND (itemlast > 455.0) AND (itemlast > 465.0) AND (itemlast > 475.0) AND (itemlast > 485.0) AND (itemlast <= 495.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast > 565.0) AND (itemlast > 575.0) AND (itemlast <= 615.0) AND (itemlast > 585.0) AND (itemlast <= 595.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast > 565.0) AND (itemlast > 575.0) AND (itemlast <= 615.0) AND (itemlast > 585.0) AND (itemlast > 595.0) AND (itemlast <= 605.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast > 565.0) AND (itemlast > 575.0) AND (itemlast <= 615.0) AND (itemlast > 585.0) AND (itemlast > 595.0) AND (itemlast > 605.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast > 565.0) AND (itemlast > 575.0) AND (itemlast > 615.0) AND (itemlast <= 685.0) AND (itemlast <= 625.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast > 565.0) AND (itemlast > 575.0) AND (itemlast > 615.0) AND (itemlast <= 685.0) AND (itemlast > 625.0) AND (itemlast <= 635.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast > 565.0) AND (itemlast > 575.0) AND (itemlast > 615.0) AND (itemlast <= 685.0) AND (itemlast > 625.0) AND (itemlast > 635.0) AND (itemlast <= 645.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast > 565.0) AND (itemlast > 575.0) AND (itemlast > 615.0) AND (itemlast <= 685.0) AND (itemlast > 625.0) AND (itemlast > 635.0) AND (itemlast > 645.0) AND (itemlast <= 655.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast > 565.0) AND (itemlast > 575.0) AND (itemlast > 615.0) AND (itemlast <= 685.0) AND (itemlast > 625.0) AND (itemlast > 635.0) AND (itemlast > 645.0) AND (itemlast > 655.0) AND (itemlast <= 665.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast > 565.0) AND (itemlast > 575.0) AND (itemlast > 615.0) AND (itemlast <= 685.0) AND (itemlast > 625.0) AND (itemlast > 635.0) AND (itemlast > 645.0) AND (itemlast > 655.0) AND (itemlast > 665.0) AND (itemlast <= 675.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast > 565.0) AND (itemlast > 575.0) AND (itemlast > 615.0) AND (itemlast <= 685.0) AND (itemlast > 625.0) AND (itemlast > 635.0) AND (itemlast > 645.0) AND (itemlast > 655.0) AND (itemlast > 665.0) AND (itemlast > 675.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast > 565.0) AND (itemlast > 575.0) AND (itemlast > 615.0) AND (itemlast > 685.0) AND (itemlast > 695.0) AND (itemlast > 705.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast > 565.0) AND (itemlast > 575.0) AND (itemlast > 615.0) AND (itemlast > 685.0) AND (itemlast > 695.0) AND (itemlast <= 705.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast <= 715.0) AND (itemlast > 175.0) AND (itemlast > 565.0) AND (itemlast > 575.0) AND (itemlast > 615.0) AND (itemlast > 685.0) AND (itemlast <= 695.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast > 715.0) AND (itemlast <= 965.0) AND (itemlast <= 915.0) AND (itemlast <= 725.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast > 715.0) AND (itemlast <= 965.0) AND (itemlast <= 915.0) AND (itemlast > 725.0) AND (itemlast > 775.0) AND (itemlast > 785.0) AND (itemlast > 795.0) AND (itemlast > 815.0) AND (itemlast <= 835.0) AND (itemlast > 825.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast > 715.0) AND (itemlast <= 965.0) AND (itemlast <= 915.0) AND (itemlast > 725.0) AND (itemlast > 775.0) AND (itemlast > 785.0) AND (itemlast > 795.0) AND (itemlast > 815.0) AND (itemlast > 835.0) AND (itemlast > 845.0) AND (itemlast > 865.0) AND (itemlast > 875.0) AND (itemlast > 885.0) AND (itemlast > 895.0) AND (itemlast > 905.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast > 715.0) AND (itemlast <= 965.0) AND (itemlast <= 915.0) AND (itemlast > 725.0) AND (itemlast > 775.0) AND (itemlast > 785.0) AND (itemlast > 795.0) AND (itemlast > 815.0) AND (itemlast > 835.0) AND (itemlast > 845.0) AND (itemlast > 865.0) AND (itemlast > 875.0) AND (itemlast > 885.0) AND (itemlast > 895.0) AND (itemlast <= 905.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast > 715.0) AND (itemlast <= 965.0) AND (itemlast <= 915.0) AND (itemlast > 725.0) AND (itemlast > 775.0) AND (itemlast > 785.0) AND (itemlast > 795.0) AND (itemlast > 815.0) AND (itemlast > 835.0) AND (itemlast > 845.0) AND (itemlast > 865.0) AND (itemlast > 875.0) AND (itemlast > 885.0) AND (itemlast <= 895.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast > 715.0) AND (itemlast <= 965.0) AND (itemlast <= 915.0) AND (itemlast > 725.0) AND (itemlast > 775.0) AND (itemlast > 785.0) AND (itemlast > 795.0) AND (itemlast > 815.0) AND (itemlast > 835.0) AND (itemlast > 845.0) AND (itemlast > 865.0) AND (itemlast > 875.0) AND (itemlast <= 885.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast > 715.0) AND (itemlast <= 965.0) AND (itemlast <= 915.0) AND (itemlast > 725.0) AND (itemlast > 775.0) AND (itemlast > 785.0) AND (itemlast > 795.0) AND (itemlast > 815.0) AND (itemlast > 835.0) AND (itemlast > 845.0) AND (itemlast > 865.0) AND (itemlast <= 875.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast > 715.0) AND (itemlast <= 965.0) AND (itemlast <= 915.0) AND (itemlast > 725.0) AND (itemlast > 775.0) AND (itemlast > 785.0) AND (itemlast > 795.0) AND (itemlast > 815.0) AND (itemlast > 835.0) AND (itemlast > 845.0) AND (itemlast <= 865.0) AND (itemlast > 855.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast > 715.0) AND (itemlast <= 965.0) AND (itemlast <= 915.0) AND (itemlast > 725.0) AND (itemlast > 775.0) AND (itemlast > 785.0) AND (itemlast > 795.0) AND (itemlast > 815.0) AND (itemlast > 835.0) AND (itemlast > 845.0) AND (itemlast <= 865.0) AND (itemlast <= 855.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast > 715.0) AND (itemlast <= 965.0) AND (itemlast <= 915.0) AND (itemlast > 725.0) AND (itemlast > 775.0) AND (itemlast > 785.0) AND (itemlast > 795.0) AND (itemlast > 815.0) AND (itemlast > 835.0) AND (itemlast <= 845.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast > 715.0) AND (itemlast <= 965.0) AND (itemlast <= 915.0) AND (itemlast > 725.0) AND (itemlast > 775.0) AND (itemlast > 785.0) AND (itemlast > 795.0) AND (itemlast > 815.0) AND (itemlast <= 835.0) AND (itemlast <= 825.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast > 715.0) AND (itemlast <= 965.0) AND (itemlast <= 915.0) AND (itemlast > 725.0) AND (itemlast > 775.0) AND (itemlast > 785.0) AND (itemlast > 795.0) AND (itemlast <= 815.0) AND (itemlast > 805.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast > 715.0) AND (itemlast <= 965.0) AND (itemlast <= 915.0) AND (itemlast > 725.0) AND (itemlast > 775.0) AND (itemlast > 785.0) AND (itemlast > 795.0) AND (itemlast <= 815.0) AND (itemlast <= 805.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast > 715.0) AND (itemlast <= 965.0) AND (itemlast <= 915.0) AND (itemlast > 725.0) AND (itemlast > 775.0) AND (itemlast > 785.0) AND (itemlast <= 795.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast > 715.0) AND (itemlast <= 965.0) AND (itemlast <= 915.0) AND (itemlast > 725.0) AND (itemlast > 775.0) AND (itemlast <= 785.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast > 715.0) AND (itemlast <= 965.0) AND (itemlast <= 915.0) AND (itemlast > 725.0) AND (itemlast <= 775.0) AND (itemlast > 735.0) AND (itemlast > 745.0) AND (itemlast > 755.0) AND (itemlast > 765.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast > 715.0) AND (itemlast <= 965.0) AND (itemlast <= 915.0) AND (itemlast > 725.0) AND (itemlast <= 775.0) AND (itemlast > 735.0) AND (itemlast > 745.0) AND (itemlast <= 755.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast > 715.0) AND (itemlast <= 965.0) AND (itemlast <= 915.0) AND (itemlast > 725.0) AND (itemlast <= 775.0) AND (itemlast > 735.0) AND (itemlast <= 745.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast > 715.0) AND (itemlast <= 965.0) AND (itemlast <= 915.0) AND (itemlast > 725.0) AND (itemlast <= 775.0) AND (itemlast <= 735.0) THEN class: NPR 
+IF (itemlast > 9.5) AND (itemlast > 10.5) AND (itemlast > 15.5) AND (itemlast > 715.0) AND (itemlast <= 965.0) AND (itemlast <= 915.0) AND (itemlast > 725.0) AND (itemlast <= 775.0) AND (itemlast > 735.0) AND (itemlast > 745.0) AND (itemlast > 755.0) AND (itemlast <= 765.0) THEN class: NPR 
+
+ONLY INTERVAL-BASED: 
+Accuracy of the model is 98%
+Precision: [0. 1.]
+Used features: ['itemlist1_mean']
+|--- itemlist1_mean <= 9.50
+|   |--- class: NPR
+|--- itemlist1_mean >  9.50
+|   |--- class: PR
+
+IF (itemlist1_mean > 9.5) THEN class: NPR 
+
+Accuracy of the model is 98%
+Precision: [0. 1.]
+Used features: ['itemlist1_mean']
+|--- itemlist1_mean <= 9.50
+|   |--- class: NPR
+|--- itemlist1_mean >  9.50
+|   |--- class: PR
+
+IF (itemlist1_mean > 9.5) THEN class: NPR 
+
+Accuracy of the model is 97%
+Precision: [0. 1.]
+Used features: ['itemlist2_mean']
+|--- itemlist2_mean <= 9.50
+|   |--- class: NPR
+|--- itemlist2_mean >  9.50
+|   |--- class: PR
+
+IF (itemlist2_mean > 9.5) THEN class: NPR 
+
+Accuracy of the model is 61%
+Precision: [0.48051948 0.71910112]
+Used features: ['itemlist8_wthavg']
+|--- itemlist8_wthavg <= 15.50
+|   |--- class: NPR
+|--- itemlist8_wthavg >  15.50
+|   |--- class: PR
+
+IF (itemlist8_wthavg > 15.5) THEN class: NPR 
+
+Accuracy of the model is 83%
+Precision: [0.83333333 0.        ]
+Used features: ['itemlist16_sum']
+|--- itemlist16_sum <= 18.00
+|   |--- class: NPR
+|--- itemlist16_sum >  18.00
+|   |--- class: NPR
+
+
+ONLY PATTERN-BASED: 
+Accuracy of the model is 58%
+Precision: [0.93103448 0.25806452]
+Used features: ['itemlist.count(11)>=13']
+|--- itemlist.count(11)>=13 <= 0.50
+|   |--- class: NPR
+|--- itemlist.count(11)>=13 >  0.50
+|   |--- class: PR
+
+IF (itemlist.count(11)>=13 == TRUE) THEN class: NPR 
+
+ONLY GLOBAL FEATURES: 
+Accuracy of the model is 88%
+Precision: [0.90566038 0.71428571]
+Used features: ['item__cwt_coefficients__coeff_0__w_5__widths_(2, 5, 10, 20)']
+|--- item__cwt_coefficients__coeff_0__w_5__widths_(2, 5, 10, 20) <= 9.04
+|   |--- class: NPR
+|--- item__cwt_coefficients__coeff_0__w_5__widths_(2, 5, 10, 20) >  9.04
+|   |--- class: PR
+
+IF (item__cwt_coefficients__coeff_0__w_5__widths_(2, 5, 10, 20) > 9.039) THEN class: NPR 
+
+COMBINED: 
+Accuracy of the model is 88%
+Precision: [0.90566038 0.71428571]
+Used features: ['item__cwt_coefficients__coeff_0__w_5__widths_(2, 5, 10, 20)']
+|--- item__cwt_coefficients__coeff_0__w_5__widths_(2, 5, 10, 20) <= 9.04
+|   |--- class: NPR
+|--- item__cwt_coefficients__coeff_0__w_5__widths_(2, 5, 10, 20) >  9.04
+|   |--- class: PR
+
+IF (item__cwt_coefficients__coeff_0__w_5__widths_(2, 5, 10, 20) > 9.039) THEN class: NPR 

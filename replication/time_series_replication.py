@@ -23,7 +23,6 @@ from tsfresh import extract_features, select_features
 import tree_code_replication as tc
 import baseline_replication as bc
 import BPI_preprocessing as bpi
-import evaluation as ev
 
 # Coloring output if wanted
 class color:
@@ -241,8 +240,9 @@ def pipeline(use_case, df, id, variable_result,results,result_column, variable_i
         max_accuracy = 0
         
         # Baseline replication
-        print("BASIC DECISION TREE: ")
-        accuracy, used_features, baseline_text = bc.learn_tree(df, result_column, num_cols, variable_result, results, True)
+        pattern = 'BASIC DECISION TREE'
+        print(pattern)
+        accuracy, used_features, baseline_text = bc.learn_tree(df, result_column, num_cols, variable_result, results, True, use_case, pattern = pattern)
         total_text += "BASIC DECISION TREE: \n"
         total_text += baseline_text + "\n"
         if use_case == "manufacturing":
@@ -250,7 +250,8 @@ def pipeline(use_case, df, id, variable_result,results,result_column, variable_i
             
         print()
         print()
-        print('ONLY INTERVAL-BASED:')
+        pattern = 'ONLY INTERVAL-BASED'
+        print(pattern)
         total_text += "ONLY INTERVAL-BASED: \n"
         # Interval-Based:
         if not interval:
@@ -267,7 +268,7 @@ def pipeline(use_case, df, id, variable_result,results,result_column, variable_i
                 df_new = df_new.dropna()
                 var_interval = df_new.select_dtypes(include=np.number).columns.tolist()
                 var_interval = [x for x in var_interval if x != id]
-                accuracy, used_features, interval_text = tc.learn_tree(df_new, result_column, var_interval, variable_result, results, True)
+                accuracy, used_features, interval_text = tc.learn_tree(df_new, result_column, var_interval, variable_result, results, True, use_case, pattern)
                 total_text += interval_text + "\n"
                 del interval_text
                 if accuracy > accuracy_baseline:
@@ -288,8 +289,9 @@ def pipeline(use_case, df, id, variable_result,results,result_column, variable_i
         # pattern based
         candidate_thresholds = get_distribution(array_ok, array_nok)
         df, var_pattern = create_latent_variables(candidate_thresholds, df, variable_interest)
-        print("ONLY PATTERN-BASED:")
-        accuracy, var_pattern, pattern_text = tc.learn_tree(df, result_column, var_pattern, variable_result, results, True)
+        pattern = 'ONLY PATTERN-BASED'
+        print(pattern)
+        accuracy, var_pattern, pattern_text = tc.learn_tree(df, result_column, var_pattern, variable_result, results, use_case, pattern)
         total_text += "ONLY PATTERN-BASED: \n" + pattern_text + "\n"
         del pattern_text
         if accuracy > max_accuracy:
@@ -307,8 +309,9 @@ def pipeline(use_case, df, id, variable_result,results,result_column, variable_i
                 to_drop.append(d)
         df = df.drop(columns=to_drop)
         num_cols = df.select_dtypes(include=np.number).columns.tolist()
-        print("ONLY GLOBAL FEATURES:")
-        accuracy, num_cols, global_text = tc.learn_tree(df, result_column, num_cols, variable_result, results, True)
+        pattern = 'ONLY GLOBAL FEATURES'
+        print(pattern)
+        accuracy, num_cols, global_text = tc.learn_tree(df, result_column, num_cols, variable_result, results, True, use_case, pattern)
         total_text += "ONLY GLOBAL FEATURES: \n" + global_text + "\n"
         del global_text
         print()
@@ -323,8 +326,9 @@ def pipeline(use_case, df, id, variable_result,results,result_column, variable_i
         else:
             df_og = pd.merge(df, df_og, on=id, how="outer", suffixes=('', '_y'))
             num_cols_all.extend(num_cols)
-    print("COMBINED:")
-    acc, features, combined_text = tc.learn_tree(df_og, result_column, num_cols_all, variable_result, results, True, True)
+    pattern = 'COMBINED'
+    print(pattern)
+    acc, features, combined_text = tc.learn_tree(df_og, result_column, num_cols_all, variable_result, results, True, use_case, pattern)
     total_text += "COMBINED: \n" + combined_text
     
     if not os.path.isdir('results'):
@@ -342,11 +346,13 @@ if __name__ == '__main__' :
         use_case = "running"
     
     # Change working directory (relevant for data access)
-    os.chdir("..")
+    print(color.BOLD+ color.CYAN + 'Current directory: ' + os.getcwd() + color.END)
+    # os.chdir("..")
+    print(color.BOLD+ color.CYAN + 'Current directory: ' + os.getcwd() + color.END)
 
     #preprocessing happens here
     if use_case == "manufacturing":
-        file = "/home/abdocharrade/projects/APM-Project/data/manufacturing.csv"
+        file = r"data/manufacturing.csv"
         id = "casename"
         results = ['nok', 'ok']
         variable_result = "nok"
@@ -410,7 +416,7 @@ if __name__ == '__main__' :
 
     else:
         use_case = "running"
-        file = r'/home/abdocharrade/projects/APM-Project/data/running.csv'
+        file = r'data/running.csv'
         id = "uuid"
         results = ['Discard Goods', 'Transfer Goods']
         result_column = 'event'

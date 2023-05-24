@@ -25,7 +25,7 @@ from sklearn.metrics import accuracy_score, precision_score
 from sklearn.tree import export_text
 import re
 from warnings import simplefilter
-import evaluation as ev
+import Evaluation as ev
 simplefilter(action='ignore', category=FutureWarning)
 simplefilter(action='ignore', category=RuntimeWarning)
 
@@ -76,7 +76,7 @@ def get_rules(model, features, results, result):
             rules += [rule]
     return rules
 
-def learn_tree(df, result_column, names, result, results=None, final=False, param_global = False):
+def learn_tree(df, result_column, names, result, results=None, final=False, use_case = None, pattern = None):
     y_var = df[result_column].values
     X_var = df[names]
     features = np.array(list(X_var))
@@ -108,10 +108,12 @@ def learn_tree(df, result_column, names, result, results=None, final=False, para
     else:
         model = clfs[-1]
     model = model.fit(X_train,y_train)
-
     pred_model = model.predict(X_test)
-    y_pred = np.where(pred_model > 0.5, 1, 0)
     y_true = y_test
+    
+    # Confusion matrix
+    ev.generate_confusion_matrix(y_true, pred_model, np.unique(y_var), use_case, pattern)
+    
     n_nodes = model.tree_.node_count
     max_depth = model.tree_.max_depth
     accuracy = accuracy_score(y_test, pred_model)
@@ -137,9 +139,5 @@ def learn_tree(df, result_column, names, result, results=None, final=False, para
         for r in rules:
             text += r + "\n"
         print(text)
-        
-        if param_global == True:
-            save_path = "/home/abdocharrade/projects/APM-Project/images/Confusion_Matrix.png"
-            ev.generate_confusion_matrix(y_true, y_pred, save_path)
         
     return accuracy, used_features, text

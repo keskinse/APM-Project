@@ -82,7 +82,7 @@ def get_rules(model, features, results, result):
             rules += [rule]
     return rules
 
-def learn_tree(df, result_column, names, result, results=None, final=False):
+def learn_tree(df, result_column, names, result, results=None, final=False, use_case = None,  pattern = None):
     y_var = df[result_column].values
     X_var = df[names]
     features = np.array(list(X_var))
@@ -195,4 +195,4 @@ if __name__ == '__main__' :
         df = df.dropna(axis=1)
         y_var = df[result_column + "last"].to_numpy()
         
-    learn_tree(df, result_column + 'last', num_cols, variable_result, results, True)
+    learn_tree(df, result_column + 'last', num_cols, variable_result, results, True, None, None)
