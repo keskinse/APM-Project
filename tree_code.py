@@ -14,7 +14,7 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.tree import _tree, svm
+from sklearn.tree import _tree
 from sklearn.tree import DecisionTreeClassifier as tree
 from sklearn.ensemble import ExtraTreesClassifier
 import warnings
@@ -22,8 +22,7 @@ import sklearn.exceptions
 warnings.filterwarnings("ignore", category=sklearn.exceptions.UndefinedMetricWarning)
 from sklearn.feature_selection import SelectFromModel
 from sklearn.model_selection import train_test_split
-# Adding confusion_matrix
-from sklearn.metrics import accuracy_score, precision_score, confusion_matrix, roc_curve, auc
+from sklearn.metrics import accuracy_score, precision_score
 from sklearn.tree import export_text
 import re
 from warnings import simplefilter
@@ -75,79 +74,6 @@ def get_rules(model, features, results, result):
             rule += f"class: {result} "
             rules += [rule]
     return rules
-
-# Plotting our confusion matrix
-def plot_confusion_matrix(y_test, pred_model):
-    # plot confusion matrix
-    cm = confusion_matrix(y_test, pred_model)
-    fig, ax = plt.subplots(figsize=(8, 8))
-    ax.imshow(cm, cmap='Blues')
-    ax.grid(False)
-    ax.set_xlabel('Predicted')
-    ax.set_ylabel('Actual')
-    ax.xaxis.set(ticks=range(len(labels)))
-    ax.yaxis.set(ticks=range(len(labels)))
-    for i in range(len(labels)):
-        for j in range(len(labels)):
-            ax.text(j, i, cm[i, j], ha='center', va='center', color='white')
-    plt.show()
-    
-# Plotting ROC & AUC Curve
-def plot_roc_curve(y_test, y_pred):
-    fpr, tpr, thresholds = roc_curve(y_test, y_pred)
-    roc_auc = auc(fpr, tpr)
-    plt.figure()
-    plt.plot(fpr, tpr, color='darkorange', lw=2, label='ROC curve (area = %0.2f)' % roc_auc)
-    plt.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--')
-    plt.xlim([0.0, 1.0])
-    plt.ylim([0.0, 1.05])
-    plt.xlabel('False Positive Rate')
-    plt.ylabel('True Positive Rate')
-    plt.title('Receiver operating characteristic')
-    plt.legend(loc="lower right")
-    plt.show()
-    
-def learn_svm(df, result_column, names, result, results=None, final=False):
-    y_var = df[result_column].values
-    X_var = df[names]
-
-    X_train, X_test, y_train, y_test = train_test_split(X_var, y_var, test_size=0.20, shuffle=False, stratify=None, random_state=42)
-
-    clf = svm.SVC(kernel='linear', C=1, random_state=42)
-    clf.fit(X_train, y_train)
-
-    pred_model = clf.predict(X_test)
-    accuracy = accuracy_score(y_test, pred_model)
-    precision = precision_score(y_test, pred_model, average=None)
-
-    if final:
-        print(('Accuracy of the model is {:.0%}'.format(accuracy)))
-        print("Precision: ", precision)
-            
-        # plot confusion matrix
-        cm = confusion_matrix(y_test, pred_model)
-        fig, ax = plt.subplots(figsize=(8, 8))
-        ax.imshow(cm, cmap='Blues')
-        ax.grid(False)
-        ax.set_xlabel('Predicted')
-        ax.set_ylabel('Actual')
-        ax.xaxis.set(ticks=range(len(labels)))
-        ax.yaxis.set(ticks=range(len(labels)))
-        for i in range(len(labels)):
-            for j in range(len(labels)):
-                ax.text(j, i, cm[i, j], ha='center', va='center', color='white')
-        plt.show()
-
-        # plot ROC curve
-        plot_roc_curve(clf, X_test, y_test)
-        plt.show()
-        
-        # calculate AUC
-        fpr, tpr, thresholds = roc_curve(y_test, pred_model)
-        auc_score = auc(fpr, tpr)
-        print(f"AUC score: {auc_score}")
-            
-    return accuracy, precision
 
 
 def learn_tree(df, result_column, names, result, results=None, final=False):
